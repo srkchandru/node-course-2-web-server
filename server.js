@@ -27,8 +27,6 @@ app.use((req, res, next) => {
     }
 });
 
-app.get
-
 app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: "Home Page",
@@ -48,6 +46,12 @@ app.get('/bad', (req, res) => {
         code: 400
     });
 });
+
+app.get("/projects", (req, res) => {
+    res.render("projects.hbs", {
+        welcomeMessage: "This is my projects page"
+    });
+})
 
 app.listen(port, () => {
     console.log(`Server is listening at port ${port}`);
